@@ -22,7 +22,7 @@ highlight LineNr ctermfg=red
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 
-"NeoBundle©‘Ì
+"NeoBundleè‡ªä½“
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 "
@@ -31,28 +31,28 @@ NeoBundle 'Townk/vim-autoclose'
 "HTML
 NeoBundle 'mattn/emmet-vim'
 
-" ƒVƒ“ƒ^ƒbƒNƒXƒ`ƒFƒbƒN
+" ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ãƒã‚§ãƒƒã‚¯
 NeoBundle 'scrooloose/syntastic'
 
-" RailsŒü‚¯‚ÌƒRƒ}ƒ“ƒh‚ğ’ñ‹Ÿ‚·‚é
+" Railså‘ã‘ã®ã‚³ãƒãƒ³ãƒ‰ã‚’æä¾›ã™ã‚‹
 NeoBundle 'tpope/vim-rails'
 
-" RubyŒü‚¯‚Éend‚ğ©“®‘}“ü‚µ‚Ä‚­‚ê‚é
+" Rubyå‘ã‘ã«endã‚’è‡ªå‹•æŒ¿å…¥ã—ã¦ãã‚Œã‚‹
 NeoBundle 'tpope/vim-endwise'
 
-" ƒRƒƒ“ƒgON/OFF‚ğèŒy‚ÉÀs
+" ã‚³ãƒ¡ãƒ³ãƒˆON/OFFã‚’æ‰‹è»½ã«å®Ÿè¡Œ
 NeoBundle 'tomtom/tcomment_vim'
 
-" ƒCƒ“ƒfƒ“ƒg‚ÉF‚ğ•t‚¯‚ÄŒ©‚â‚·‚­‚·‚é
+" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã«è‰²ã‚’ä»˜ã‘ã¦è¦‹ã‚„ã™ãã™ã‚‹
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
-" ƒƒOƒtƒ@ƒCƒ‹‚ğF‚Ã‚¯‚µ‚Ä‚­‚ê‚é
+" ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è‰²ã¥ã‘ã—ã¦ãã‚Œã‚‹
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 
-  " vim‚ğ—§‚¿ã‚°‚½‚Æ‚«‚ÉA©“®“I‚Évim-indent-guides‚ğƒIƒ“‚É‚·‚é
+  " vimã‚’ç«‹ã¡ä¸Šã’ãŸã¨ãã«ã€è‡ªå‹•çš„ã«vim-indent-guidesã‚’ã‚ªãƒ³ã«ã™ã‚‹
   let g:indent_guides_enable_on_vim_startup = 1
 
-" s––‚Ì”¼ŠpƒXƒy[ƒX‚ğ‰Â‹‰»
+" è¡Œæœ«ã®åŠè§’ã‚¹ãƒšãƒ¼ã‚¹ã‚’å¯è¦–åŒ–
 NeoBundle 'bronson/vim-trailing-whitespace'
 
 call neobundle#end()

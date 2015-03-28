@@ -22,6 +22,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     # Create SymboricLink
     ln -s /vagrant /home/vagrant/vagrant.link
+    cp -fr vagrant.link/.vimrc .vimrc
     
     sudo yum -y update
     sudo yum -y install git
@@ -46,10 +47,15 @@ Vagrant.configure(2) do |config|
     cd /usr/local/src
     sudo wget http://nodejs.org/dist/latest/node-v0.12.1.tar.gz
     sudo tar -zxvf node-v0.12.1.tar.gz
-    cd node-v0.12.1.tar.gz
+    cd node-v0.12.1
     sudo ./configure
     sudo make
     sudo make install
+    
+    sudo wget "http://curl.haxx.se/download/curl-7.41.0.tar.gz
+    sudo tar -zxvf curl-7.41.0.tar.gz
+    sudo ./configure --prefix=/usr/local --with-ssl=/usr/local/ssl --with-libssh2=/usr/local
+    
     
     sudo curl https://npmjs.org/install.sh | sh
     sudo npm install -g coffee-script
