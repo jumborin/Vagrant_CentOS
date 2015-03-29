@@ -22,6 +22,9 @@ Guest Additionsを更新してくれるプラグイン
 ####vagrant-aws  
 awsをバックエンドとして使えるプラグイン
 
+####vagrant-cachier
+キャッシュを保存しておくことでvagrant upを高速化できるプラグイン
+
 ##ソフトウェアインストーラ  
 ####vagrant  
 http://www.vagrantup.com/downloads.html  

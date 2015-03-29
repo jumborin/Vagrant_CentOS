@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   Encoding.default_external = 'UTF-8'
   config.vm.box = "https://f0fff3908f081cb6461b407be80daf97f07ac418.googledrive.com/host/0BwtuV7VyVTSkUG1PM3pCeDJ4dVE/centos7.box"
   config.vm.guest = :linux
-  config.vm.box_check_update = false
+  config.vm.box_check_update = true
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # config.vm.synced_folder "./sync", "/vagrant/sync"
@@ -20,44 +20,39 @@ Vagrant.configure(2) do |config|
   end
   
   config.vm.provision "shell", inline: <<-SHELL
+  
     # Create SymboricLink
     ln -s /vagrant /home/vagrant/vagrant.link
-    cp -fr vagrant.link/.vimrc .vimrc
+    cp -fr /home/vagrant/vagrant.link/.vimrc /home/vagrant/.vimrc
+    chown -R vagrant .vimrc
+    mkdir -p /home/vagrant/.vim/bundle
+    chown -R vagrant /home/vagrant/.vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim /home/vagrant/.vim/bundle/neobundle.vim
+    chown -R vagrant /home/vagrant/.vim/bundle/neobundle.vim
     
     sudo yum -y update
     sudo yum -y install git
     sudo yum -y install ftp
     sudo yum -y install gnome-desktop3
-    sudo yum -y install apt
-    
-    #Java
     sudo yum -y install java
-    
-    #Ruby
     sudo yum -y install ruby
     gem install bundler
     
     # Vim
     sudo yum -y install vim-enhanced
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     
+    
+    
+    # NodeJS
+    sudo yum -y install epel-release
+    sudo yum -y install nodejs npm --enablerepo=epel
+    sudo npm install -g jshint
+    
+    sudo yum -y install openssl-devel
+    sudo yum -y install libssh2
     
     # CoffeeScript
-    cd /usr/local/src
-    sudo wget http://nodejs.org/dist/latest/node-v0.12.1.tar.gz
-    sudo tar -zxvf node-v0.12.1.tar.gz
-    cd node-v0.12.1
-    sudo ./configure
-    sudo make
-    sudo make install
-    
-    sudo wget "http://curl.haxx.se/download/curl-7.41.0.tar.gz
-    sudo tar -zxvf curl-7.41.0.tar.gz
-    sudo ./configure --prefix=/usr/local --with-ssl=/usr/local/ssl --with-libssh2=/usr/local
-    
-    
-    sudo curl https://npmjs.org/install.sh | sh
+    cd /home/vagrant
     sudo npm install -g coffee-script
     
     # Database
@@ -66,6 +61,9 @@ Vagrant.configure(2) do |config|
     
     # Web
     #sudo yum -y install tomcat
+    
+    # Application
+    # TODO
     
   SHELL
   

@@ -34,11 +34,7 @@ NeoBundle 'mattn/emmet-vim'
 " シンタックスチェック
 NeoBundle 'scrooloose/syntastic'
 
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
+  let g:syntastic_javascript_checker = "jshint"
 
 " コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
@@ -54,6 +50,38 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
+
+
+" 以下言語別プラグイン
+" Ruby
+" Ruby向けにendを自動挿入してくれる
+NeoBundle 'tpope/vim-endwise'
+
+" Rails向けのコマンドを提供する
+NeoBundle 'tpope/vim-rails'
+
+
+" JavaScript
+" JavaScript BDDツール
+NeoBundle 'claco/jasmine.vim'
+
+
+" CoffeeScript
+" syntax + 自動compile
+Bundle 'kchmck/vim-coffee-script'
+
+  " vimにcoffeeファイルタイプを認識させる
+  au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+  " インデント設定
+  autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
+  "エラーがあったら別ウィンドウで表示
+  autocmd QuickFixCmdPost * nested cwindow | redraw! 
+  " Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
+  nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
+
+" Scala
+NeoBundle 'scala/scala-tool-support'
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
 
