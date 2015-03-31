@@ -1,4 +1,6 @@
 .vagrant
+teraterm.ini
+ttpmacro.exe.lnk
 
 *.log
 .cache

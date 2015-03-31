@@ -1,7 +1,8 @@
 Vagrant.configure(2) do |config|
 
   Encoding.default_external = 'UTF-8'
-  config.vm.box = "https://f0fff3908f081cb6461b407be80daf97f07ac418.googledrive.com/host/0BwtuV7VyVTSkUG1PM3pCeDJ4dVE/centos7.box"
+  config.vm.box = "chef/centos-7.0"
+  #config.vm.box = "https://f0fff3908f081cb6461b407be80daf97f07ac418.googledrive.com/host/0BwtuV7VyVTSkUG1PM3pCeDJ4dVE/centos7.box"
   config.vm.guest = :linux
   config.vm.box_check_update = true
   config.vm.network "forwarded_port", guest: 80, host: 8080

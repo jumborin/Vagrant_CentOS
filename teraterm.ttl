@@ -1,0 +1,17 @@
+getdir dir
+iniFile=dir
+keyFile=dir
+
+;teraterm設定ファイル
+strconcat iniFile '/teraterm.ini'
+
+;秘密鍵ファイル
+strconcat keyFile '/.vagrant/machines/default/virtualbox/private_key'
+
+;接続先コマンド作成
+sprintf2 command 'localhost:2222 /F=%s /ssh /2 /auth=publickey /user=vagrant /keyfile=%s' iniFile keyFile
+
+;接続
+connect command
+
+
