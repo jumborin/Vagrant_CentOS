@@ -28,7 +28,10 @@ Vagrant.configure(2) do |config|
     mkdir -p /home/vagrant/.vim/bundle
     sudo chown -R vagrant:vagrant /home/vagrant/.vim
     
+    sudo yum -y upgrade
     sudo yum -y update
+    sudo yum -y install yum-plugin-security
+    sudo yum --security update
     sudo yum -y install git
     sudo yum -y install ftp
     sudo yum -y install gnome-desktop3
@@ -64,6 +67,8 @@ Vagrant.configure(2) do |config|
     # Application
     # git clone [ApplicationUrl]
     
+    # Cleaner
+    sudo yum clean all
   SHELL
   
 end
