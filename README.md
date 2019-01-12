@@ -34,21 +34,21 @@ VirtualBox上でCentos7の仮想環境を構築する。
 
 
 
-##vagrantプラグイン一覧  
-* vagrant-vbguest  
-Guest Additionsを更新してくれるプラグイン  
+* vagrantプラグイン一覧  
+  * vagrant-vbguest  
+  Guest Additionsを更新してくれるプラグイン  
 
-* vagrant-omnibus  
-ゲストOSに大して自動的にchefをインストールしてくれるプラグイン  
+  * vagrant-omnibus  
+  ゲストOSに大して自動的にchefをインストールしてくれるプラグイン  
 
-* vagrant-aws  
-awsをバックエンドとして使えるプラグイン  
+  * vagrant-aws  
+  awsをバックエンドとして使えるプラグイン  
 
-* vagrant-cachier  
-キャッシュを保存しておくことでvagrant upを高速化できるプラグイン  
+  * vagrant-cachier  
+  キャッシュを保存しておくことでvagrant upを高速化できるプラグイン  
 
 
 
-##参考サイト  
-* vagrantドキュメント(日本語)  
-http://lab.raqda.com/vagrant/  
+* 参考サイト  
+  * vagrantドキュメント(日本語)  
+  http://lab.raqda.com/vagrant/  
