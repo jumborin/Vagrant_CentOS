@@ -1,7 +1,7 @@
 # 環境構築
 
 * 目的
-VirtualBox上でCentos7の仮想環境を構築する。
+  * VirtualBox上でCentos7の仮想環境を構築する。
 
 * 利用手順  
   * 必要ソフトウェア(vagrantとvirtual box)をインストールする。  
