@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Gitのログをテキストファイルに出力する。
-git log > GitLog.log
+git log --all > GitLog.log
 
 # 変数を設定
 COMMIT_MESSAGE="commit "
